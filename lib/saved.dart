@@ -26,7 +26,7 @@ class Saved extends StatelessWidget {
           ),
         ),
         backgroundColor: Color(0xFFfffeea),
-        title: BoldText("Profile",20,background),
+        title: BoldText("Aadhar Detail",20,background),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -65,13 +65,7 @@ class Saved extends StatelessWidget {
                   SizedBox(
                     height: 18,
                   ),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child:    PlainText("profile", 15, Colors.black87),
-                  ),
-                  SizedBox(
-                    height: 2,
-                  ),
+
                   Divider(
                     color: Colors.deepPurpleAccent,
                     thickness: 3.5,
@@ -108,7 +102,7 @@ class Saved extends StatelessWidget {
                             children: [
                               Align(
                                 alignment: Alignment.topLeft,
-                                child: BoldText("Background", 20, Colors.black),
+                                child: BoldText("Information about Aadhar Card", 20, Colors.black),
                               ),
                               IconButton(
                                 onPressed: () {},
@@ -170,7 +164,7 @@ class Saved extends StatelessWidget {
                                     children: [
                                       PlainText("Aadhar Number", 17, grey),
                                       Text(
-                                        "${userdata.read('userAadhar')}",
+                                        "${userdata.read('useraadhar')}",
                                         style: TextStyle(
                                             color: Colors.black54,
                                             fontWeight: FontWeight.w500,
@@ -186,9 +180,9 @@ class Saved extends StatelessWidget {
                                     mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                     children: [
-                                      PlainText("User email", 17, grey),
+                                      PlainText(" State", 17, grey),
                                       Text(
-                                        "${userdata.read('useremail')}",
+                                        "${userdata.read('userstate')}",
                                         style: TextStyle(
                                             color: Colors.black54,
                                             fontWeight: FontWeight.w500,
@@ -205,9 +199,9 @@ class Saved extends StatelessWidget {
                                     mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                     children: [
-                                      PlainText("Bank Number", 17, grey),
+                                      PlainText(" City", 17, grey),
                                       Text(
-                                        "${userdata.read('userBank')}",
+                                        "${userdata.read('usercity')}",
                                         style: TextStyle(
                                             color: Colors.black54,
                                             fontWeight: FontWeight.w500,
@@ -238,52 +232,7 @@ class Saved extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    height: 50,
-                    width: double.maxFinite,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 7,
-                          spreadRadius: 0,
-                          // offset: Offset(
-                          //     2.0, 2.0), // shadow direction: bottom right
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 12),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              "Settings",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 18,
-                                  fontFamily: "Roboto"),
-                            ),
-                          ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.keyboard_arrow_down,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  )
+
                 ],
               ),
             ),

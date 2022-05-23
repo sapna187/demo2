@@ -23,9 +23,9 @@ class Homepage extends StatelessWidget {
   //Editing controllers
   final username_controller = TextEditingController();
   final usernum_controller = TextEditingController();
-  final useremail_controller = TextEditingController();
-  final userAadhar_controller = TextEditingController();
-  final userBank_controller = TextEditingController();
+  final userstate_controller = TextEditingController();
+  final useraadhar_controller = TextEditingController();
+  final usercity_controller = TextEditingController();
 
   final userdata = GetStorage();
 
@@ -43,7 +43,7 @@ class Homepage extends StatelessWidget {
 
         ),
         backgroundColor: Color(0xFFfffeea),
-        title: BoldText("Profile",20,Colors.black),
+        title: BoldText("Information about Aadhar Detail",20,Colors.black),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -79,13 +79,7 @@ class Homepage extends StatelessWidget {
                   SizedBox(
                     height: 18,
                   ),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child:    PlainText("profile", 15, Colors.black87),
-                  ),
-                  SizedBox(
-                    height: 2,
-                  ),
+
                   Divider(
                     color: Colors.deepPurpleAccent,
                     thickness: 3.5,
@@ -120,7 +114,7 @@ class Homepage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              BoldText("Background", 20, Colors.black),
+                              BoldText(" Aadhar Card", 20, Colors.black),
 
                             ],
                           ),
@@ -145,10 +139,10 @@ class Homepage extends StatelessWidget {
                             height: 15,
                           ),
                           TextFormField(
-                            controller: useremail_controller,
+                            controller: userstate_controller,
                             decoration: InputDecoration(
                               border: UnderlineInputBorder(),
-                              labelText: 'email number',
+                              labelText: 'State',
                             ),
                           ),
                           SizedBox(
@@ -159,7 +153,7 @@ class Homepage extends StatelessWidget {
                             child: Container(
                               width: 260,
                               child: TextFormField(
-                                controller: userAadhar_controller,
+                                controller: useraadhar_controller,
                                 decoration: InputDecoration(
                                   border: UnderlineInputBorder(),
                                   labelText: 'Aadhar Number',
@@ -171,10 +165,10 @@ class Homepage extends StatelessWidget {
                             height: 15,
                           ), //Gender
                           TextFormField(
-                            controller: userBank_controller,
+                            controller: usercity_controller,
                             decoration: InputDecoration(
                               border: UnderlineInputBorder(),
-                              labelText: 'Bank Number',
+                              labelText: 'City',
                             ),
                           ),
 
@@ -192,25 +186,18 @@ class Homepage extends StatelessWidget {
                                 onTap: () {
                                   String username = username_controller.text;
                                   String usernum = usernum_controller.text;
-                                  String useremail = useremail_controller.text;
-                                  String userAadhar =
-                                      userAadhar_controller.text;
-                                  String userBank = userBank_controller.text;
+                                  String userstate = userstate_controller.text;
+                                  String useraadhar =
+                                      useraadhar_controller.text;
+                                  String usercity = usercity_controller.text;
 
 
-                                  // if (username != '' &&
-                                  //     usernum != '' &&
-                                  //     usergender != '' &&
-                                  //     userwork != '' &&
-                                  //     useremail != '' &&
-                                  //     usergrade != '' &&
-                                  //     userboard != '') {
-                                  // userdata.write('isSaved', true);
+
                                   userdata.write('username', username);
                                   userdata.write('usernum', usernum);
-                                  userdata.write('useremail', useremail);
-                                  userdata.write('userAadhar', userAadhar);
-                                  userdata.write('userBank', userBank);
+                                  userdata.write('userstate', userstate);
+                                  userdata.write('useraadhar', useraadhar);
+                                  userdata.write('usercity', usercity);
 
                                   Get.offAll(Saved());
                                   // } else {

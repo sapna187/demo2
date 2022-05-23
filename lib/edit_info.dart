@@ -9,12 +9,12 @@ import 'constants.dart';
 import 'main.dart';
 
 class Edit extends StatelessWidget {
+  final username_controller = TextEditingController();
+  final usernum_controller = TextEditingController();
+  final userstate_controller = TextEditingController();
+  final useraadhar_controller = TextEditingController();
+  final usercity_controller = TextEditingController();
 
-  final name_controller = TextEditingController();
-  final email_controller = TextEditingController();
-  final number_controller = TextEditingController();
-  final Aadhar_controller = TextEditingController();
-  final Bank_controller = TextEditingController();
 
   final userdata2 = GetStorage();
 
@@ -35,7 +35,7 @@ class Edit extends StatelessWidget {
         elevation: 0,
         backgroundColor: Color(0xFFfffeea),
         centerTitle: true,
-        title: BoldText("Edit Information", 20, Colors.black),
+        title: BoldText("Edit Aadhar Details", 20, Colors.black),
       ),
       body: SingleChildScrollView(
         child: Stack(
@@ -95,14 +95,14 @@ class Edit extends StatelessWidget {
                       ),
                       Align(
                         alignment: Alignment.topLeft,
-                        child: BoldText("About me", 20, Colors.black),
+                        child: BoldText("Aadhar Details", 20, Colors.black),
                       ),
                       SizedBox(
                         height: 12,
                       ),
                       TextFormField(
-                        controller: name_controller,
-                        decoration: const InputDecoration(
+                        controller: username_controller,
+                        decoration: InputDecoration(
                           border: UnderlineInputBorder(),
                           labelText: 'Name',
                         ),
@@ -111,40 +111,46 @@ class Edit extends StatelessWidget {
                         height: 12,
                       ), //Name
                       TextFormField(
-                        controller: email_controller,
-                        decoration: const InputDecoration(
+                        controller: usernum_controller,
+                        decoration: InputDecoration(
                           border: UnderlineInputBorder(),
-                          labelText: 'Email',
+                          labelText: 'Contact number',
                         ),
                       ),
                       SizedBox(
                         height: 12,
                       ), //Email
                       TextFormField(
-                        controller: number_controller,
-                        decoration: const InputDecoration(
+                        controller: userstate_controller,
+                        decoration: InputDecoration(
                           border: UnderlineInputBorder(),
-                          labelText: 'Contact number',
+                          labelText: 'State',
                         ),
                       ),
                       SizedBox(
                         height: 10,
                       ), //Number
-                      TextFormField(
-                        controller: Aadhar_controller,
-                        decoration: const InputDecoration(
-                          border: UnderlineInputBorder(),
-                          labelText: 'Aadhar',
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Container(
+                          width: 260,
+                          child: TextFormField(
+                            controller: useraadhar_controller,
+                            decoration: InputDecoration(
+                              border: UnderlineInputBorder(),
+                              labelText: 'Aadhar Number',
+                            ),
+                          ),
                         ),
                       ),
                       SizedBox(
                         height: 12,
                       ), //Country
                       TextFormField(
-                        controller: Bank_controller,
-                        decoration: const InputDecoration(
+                        controller: usercity_controller,
+                        decoration: InputDecoration(
                           border: UnderlineInputBorder(),
-                          labelText: "Bank Number",
+                          labelText: 'City',
                         ),
                       ),
                       SizedBox(
@@ -158,17 +164,19 @@ class Edit extends StatelessWidget {
                           padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                           minWidth: MediaQuery.of(context).size.width,
                           onPressed: () {
-                            String name = name_controller.text;
-                            String email = email_controller.text;
-                            String number = number_controller.text;
-                            String aadhar = Aadhar_controller.text;
-                            String bank = Bank_controller.text;
+                            String username = username_controller.text;
+                            String usernum = usernum_controller.text;
+                            String userstate = userstate_controller.text;
+                            String useraadhar =
+                                useraadhar_controller.text;
+                            String usercity = usercity_controller.text;
 
-                            userdata2.write('name', name);
-                            userdata2.write('email', email);
-                            userdata2.write('number', number);
-                            userdata2.write('Aadhar Number', aadhar);
-                            userdata2.write('Bank Number', bank);
+
+                            userdata2.write('username', username);
+                            userdata2.write('usernum', usernum);
+                            userdata2.write('userstate', userstate);
+                            userdata2.write('useraadhar', useraadhar);
+                            userdata2.write('usercity', usercity);
 
                             Get.offAll(Saved2());
                           },
